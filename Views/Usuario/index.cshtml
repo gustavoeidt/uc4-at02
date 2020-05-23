@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Listagem de Usuarios";
+}
+@model List<at02.Models.Usuario>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Login</th>
+                <th>Senha</th>
+                <th>Administrador</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (at02.Models.Usuario item in Model)
+        {
+            <tr>
+                <td><a href="/usuario/atualiza/@item.id" >@item.nome</a></td>
+                <td>@(item.nascimento.ToString("dd/MM/yyyy"))</td>
+                <td>@item.login</td>
+                <td>@item.senha</td>
+                <td>@(item.tipo ? "NÃO" : "SIM")</td>
+                <td><a href="/usuario/apaga/@item.id">Apagar</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = ViewBag.pacote.nome;
+}
+<h1>@ViewData["Title"]</h1>
+
+@model at02.Models.Pacote
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    <p style="margin-top: 20px; text-align: right";>
+        <input type="submit" value="Atualizar" class="btn btn-primary"/>
+    </p>
+}

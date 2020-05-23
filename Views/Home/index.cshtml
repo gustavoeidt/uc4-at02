@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Nossos Pacotes Turísticos";
+}
+@model List<at02.Models.Pacote>
+
+@foreach (at02.Models.Pacote item in Model)
+{
+    <h3>@item.nome</h3>
+    <dl>
+        <dt>Origem</dt><dd>@item.origem</dd>
+        <dt>Destino</dt><dd>@item.destino</dd>
+        <dt>Saída</dt><dd>@(item.saida.ToString("dd/MM/yyyy"))</dd>
+        <dt>Retorno</dt><dd>@(item.retorno.ToString("dd/MM/yyyy"))</dd>
+    </dl>
+    <h4>Atrativos:</h4>
+    <p>@item.atrativo</p>
+    <hr />
+}

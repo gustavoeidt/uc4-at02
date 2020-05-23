@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Entrar no Sistema";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model at02.Models.Login
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    <p style="margin-top: 20px; text-align: right";>
+        <input type="submit" value="Entrar" class="btn btn-primary"/>
+    </p>
+}

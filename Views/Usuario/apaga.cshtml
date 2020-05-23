@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Apagar o Usuário " + ViewBag.usuario.nome;
+}
+<h1>@ViewData["Title"]</h1>
+
+@model at02.Models.Usuario
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <p style="margin-top: 20px; text-align: right";>
+        <input type="submit" value="Apagar" class="btn btn-primary"/>
+    </p>
+}
